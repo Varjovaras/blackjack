@@ -39,13 +39,16 @@ export default class DeckBuilder {
 
 	constructor() {
 		this.deck = new Array();
-		for (let s in SUITS) {
-			for (let v in VALUES) {
+		for (const s in SUITS) {
+			for (const v in VALUES) {
+				//@ts-expect-error
 				const card: Card = { Suit: s, Value: v };
 				this.deck.push(card);
 			}
 		}
-		DeckBuilder.shuffle(this.deck);
+		for (let i = 0; i < 1000000; i++) {
+			DeckBuilder.shuffle(this.deck);
+		}
 	}
 
 	/**
@@ -64,6 +67,3 @@ export default class DeckBuilder {
 		}
 	}
 }
-
-const deck = new DeckBuilder();
-console.log(deck);

@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"deck": "esrun ./src/blackjack/deck.ts"
+		"deck": "esrun ./src/blackjack/index.ts"
 	},
 	"dependencies": {
 		"@types/node": "20.3.1",
