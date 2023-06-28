@@ -12,7 +12,7 @@ export default class DeckBuilder {
 				this.deck.push(card);
 			}
 		}
-		this.shuffle();
+		// this.shuffle();
 	}
 
 	get getDeck() {

@@ -8,7 +8,7 @@ export const SUITS = {
 } as const;
 
 export const VALUES = {
-	ACE: 'A',
+	A: 'A',
 	2: '2',
 	3: '3',
 	4: '4',
@@ -21,6 +21,11 @@ export const VALUES = {
 	J: 'J',
 	Q: 'Q',
 	K: 'K',
+} as const;
+
+export const COLORS = {
+	RED: 'RED',
+	BLACK: 'BLACK',
 } as const;
 
 type ObjectValues<T> = T[keyof T];
