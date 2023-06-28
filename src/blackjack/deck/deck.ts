@@ -1,4 +1,5 @@
-import { Deck, SUITS, VALUES } from './deckTypes';
+import Card from './card';
+import { Deck, SUITS, VALUES } from './types';
 
 export default class DeckBuilder {
 	deck: Deck;
@@ -7,14 +8,11 @@ export default class DeckBuilder {
 		this.deck = new Array();
 		for (const s in SUITS) {
 			for (const v in VALUES) {
-				//@ts-expect-error
-				const card: Card = { Suit: s, Value: v };
+				const card: Card = new Card(s, v);
 				this.deck.push(card);
 			}
 		}
-		// for (let i = 0; i < 1000000; i++) {
 		this.shuffle();
-		// }
 	}
 
 	get getDeck() {
@@ -22,7 +20,6 @@ export default class DeckBuilder {
 	}
 
 	/**
-	 *
 	 * fisher-yates shuffle
 	 */
 	shuffle() {

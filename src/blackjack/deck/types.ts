@@ -1,3 +1,5 @@
+import Card from './card';
+
 export const SUITS = {
 	HEARTS: 'hearts',
 	DIAMONDS: 'diamonds',
@@ -23,13 +25,8 @@ export const VALUES = {
 
 type ObjectValues<T> = T[keyof T];
 
-type Suit = ObjectValues<typeof SUITS>;
+export type Suit = ObjectValues<typeof SUITS>;
 
-type Value = ObjectValues<typeof VALUES>;
-
-export type Card = {
-	Suit: Suit;
-	Value: Value;
-};
+export type Value = ObjectValues<typeof VALUES>;
 
 export type Deck = Card[];
